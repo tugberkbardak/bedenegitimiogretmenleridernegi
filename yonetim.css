@@ -1,0 +1,380 @@
+body {
+    margin: 0;
+    font-family: 'Cabin', sans-serif; 
+    background-color: rgb(14, 13, 64);
+    height: auto;
+    height: 100vh;
+  }
+  
+  
+  
+  .background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 115%;
+    background-image: linear-gradient(to bottom, transparent 10%, rgba(17, 0, 150, 0.9) 100%), url('ogretmenler3.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: brightness(50%);
+  
+    
+  }
+  
+  
+  
+  
+  
+  .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0); 
+    color: white;
+    text-align: center;
+    z-index: 1000;
+    transition: background-color 0.5s ease; 
+  }
+  
+  .navbar.scrolled {
+    background-color: black; 
+  }
+  
+  
+  
+  .togglemenu {
+    position: absolute;
+    top: 45%;
+    right:5%;
+    transform: translateY(-60%);
+  }
+  
+  .logoicon {
+    position: absolute;
+    top: 50%;
+    
+    transform: translateY(-60%);
+  }
+  
+  .logoicon a {
+    display: inline-block;
+    margin-left: 15px;
+    position: relative;
+  }
+  
+  .logoicon img {
+    width: 9rem;
+    margin-top: 30px;
+    padding: 10px; 
+  }
+  
+  
+  .logotext {
+    font-size: 34px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    margin-right: 20px;
+  }
+  
+  .header {
+    position: relative;
+    height: 100vh;
+  }
+  
+  .header-content {
+    position: absolute;
+    top: 34%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+  }
+  
+  .title {
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .description {
+    font-size: 24px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  /* BUTTON */
+  .cta-button {
+    display: inline-block;
+    margin-top: 10px; 
+    padding: 10px 20px;
+    background-color: transparent; 
+    color: white;
+    text-decoration: none;
+    border: 2px solid white; 
+    border-radius: 10px;
+    font-size: 20px; 
+    transition: background-color 0.3s ease, color 0.3s ease; 
+  }
+  
+  
+  /* TOGGLE */
+  #checkbox {
+    display: none;
+  }
+  
+  .toggle {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition-duration: .3s;
+  }
+  
+  .bars {
+    width: 100%;
+    height: 4px;
+    background-color: rgb(253, 255, 243);
+    border-radius: 5px;
+    transition-duration: .3s;
+  }
+  
+  #checkbox:checked + .toggle #bar2 {
+    transform: translateY(14px) rotate(60deg);
+    margin-left: 0;
+    transform-origin: right;
+    transition-duration: .3s;
+    z-index: 2;
+  }
+  
+  #checkbox:checked + .toggle #bar1 {
+    transform: translateY(28px) rotate(-60deg);
+    transition-duration: .3s;
+    transform-origin: left;
+    z-index: 1;
+  }
+  
+  #checkbox:checked + .toggle {
+    transform: rotate(-90deg);
+  }
+  
+  .menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Semi-transparent black overlay */
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    z-index: 99;
+    display: none;
+  }
+  
+  .menu-options {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Align menu options horizontally centered */
+    margin-top: 15%;
+  }
+  
+  .menu-section {
+    flex-grow: 1;
+    cursor: pointer;
+    display: none; /* Initially hide the menu sections */
+    color: white; /* Ensure text color is white */
+    font-size: 24px; /* Set appropriate font size */
+    margin-bottom: 20px; /* Add margin to separate sections */
+  }
+  
+  /* Add background images or styles for sections as needed */
+  /* Your existing CSS styles here */
+  
+  .arrow-down {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 50px;
+    background-image: url('arrow-down.png'); /* Replace with your arrow icon */
+    background-size: cover;
+    cursor: pointer;
+    animation: arrowAnimation 1s infinite alternate; /* Animation */
+  }
+  
+  @keyframes arrowAnimation {
+    0% {
+      transform: translate(-50%, 0);
+    }
+    100% {
+      transform: translate(-50%, 10px);
+    }
+  }
+  
+  
+  
+  /* main */
+  .main-content {
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 40px auto; /* Adjust margin to center horizontally and reduce space */
+    width: 75%; /* Adjust the maximum width as needed */
+    overflow: hidden; /* Ensure contents don't overflow */
+    position: absolute; /* Position absolutely */
+    top: calc(50% + 10px); /* Adjust top position */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
+    
+  }
+  .staff-section {
+    
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8%;
+    margin-top: 4%;
+  }
+  
+  .staff-member {
+    border-bottom: 1px solid #ccc; /* Add grey line between announcements */
+    width: calc(25% - 10px); /* Adjust width as needed */
+    
+  }
+  
+  .staff-member img {
+    display: block;
+    margin: 0 auto;
+    width: 270px; /* Adjust image width as needed */
+    height: 80%; /* Adjust image height as needed */
+    border-radius: 20px; /* Make the image rounded */
+    object-fit: cover; /* Ensure the image covers the entire space */
+  }
+  
+  .staff-name {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  
+  
+  
+  /* FOOTER */
+  
+  
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    z-index: 999;
+  }
+  
+  
+  
+  
+  
+  /* FADE IN EFFECT */
+  
+  @keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+  }
+  body {
+    animation: fadeIn 1s ease forwards;
+  }
+  
+  /* Media Query for smaller screens */
+  @media only screen and (max-width: 860px) {
+  
+  
+    .logoicon {
+      top: 50px; /* Adjust top position for smaller screens */
+      left: -12px; /* Adjust left position for smaller screens */
+    }
+    
+    .togglemenu {
+      top: 55px; /* Adjust top position for smaller screens */
+      right:  50px; /* Adjust right position for smaller screens */
+    }
+  
+    .logoicon img {
+      width: 4.5rem; /* Decrease width for smaller screens */
+    }
+  
+    .logotext {
+      font-size: 15px;
+      margin-top: 15px;
+      
+    }
+  
+    .title {
+      font-size: 38px; /* Decrease font size for smaller screens */
+    }
+  
+    .description {
+      font-size: 20px; /* Decrease font size for smaller screens */
+    }
+    .menu-options{
+      margin-top: 200px;
+    }
+    .header-content{
+      top: 25%;
+    }
+  
+  
+  
+  .background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 35%;
+    background-image: linear-gradient(to bottom, transparent 0%, rgb(15, 19, 59, 1) 90%), url();
+    background-size: cover;
+    background-position: center;
+    filter:opacity(60%);
+    background-size: cover;
+    background-position: center;
+    
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+    /* main */
+    .main-content {
+      margin: 5px auto; /* Center the content */
+      max-width: 80%; /* Adjust the width as needed */
+      
+    }
+    .staff-section {
+        flex-direction: column; /* Display staff members vertically */
+        align-items: center; /* Center staff members horizontally */
+      }
+      
+      .staff-member {
+        width: 100%; /* Each staff member occupies full width */
+        margin-bottom: 20px; /* Add spacing between staff members */
+      }
+  }
